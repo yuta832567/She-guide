@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>にこと向き合うための約束</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface2:#FBF8F4;
+  --tint:#FBF6F1;
+  --ink:#221F1D;
+  --ink2:#574F48;
+  --ink3:#867E75;
+  --rose:#B14D63;
+  --rose-deep:#8A3850;
+  --rose-soft:#F8E5EA;
+  --rose-line:#E8CBD3;
+  --sage:#4F7355;
+  --sage-deep:#3A5740;
+  --sage-soft:#E9F1E7;
+  --clay:#AD5640;
+  --clay-deep:#7E3A28;
+  --clay-soft:#F9E7DF;
+  --line:rgba(34,31,29,.10);
+  --line2:rgba(34,31,29,.06);
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+  --display:'Cormorant Garamond',serif;
+  --shadow:0 1px 2px rgba(34,31,29,.04),0 6px 20px rgba(34,31,29,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:860px;margin:0 auto;
+  display:flex;align-items:center;gap:3px;
+  padding:11px 16px;overflow-x:auto;scrollbar-width:none;
+}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-mark{
+  font-family:var(--display);font-size:20px;font-style:italic;font-weight:600;
+  color:var(--rose);margin-right:12px;white-space:nowrap;flex-shrink:0;
+}
+.nav a{
+  color:var(--ink2);text-decoration:none;font-size:13px;font-weight:500;
+  padding:6px 12px;border-radius:20px;white-space:nowrap;transition:.2s;
+}
+.nav a:hover,.nav a:focus-visible{background:var(--rose-soft);color:var(--rose-deep)}
+.nav a.active{background:var(--rose-soft);color:var(--rose-deep);font-weight:700}
+
+/* ---------- hero ---------- */
+.hero{padding:72px 0 30px;text-align:center;position:relative}
+.eyebrow{
+  font-family:var(--display);font-size:18px;letter-spacing:.06em;
+  color:var(--rose);font-style:italic;margin-bottom:18px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(31px,7vw,52px);line-height:1.42;letter-spacing:.02em;
+  margin-bottom:20px;
+}
+.hero .lead{max-width:540px;margin:0 auto;color:var(--ink2);font-size:15px}
+
+/* ---------- daily reminder ---------- */
+.daily{
+  max-width:620px;margin:34px auto 0;
+  background:var(--tint);border:1px solid var(--rose-line);border-radius:16px;
+  padding:22px 24px;text-align:center;position:relative;
+}
+.daily .d-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--rose);margin-bottom:10px;
+}
+.daily .d-text{
+  font-family:var(--serif);font-weight:600;font-size:clamp(17px,3.4vw,21px);
+  color:var(--ink);line-height:1.6;min-height:1.6em;
+}
+.daily .d-refresh{
+  margin-top:14px;background:none;border:1px solid var(--rose-line);
+  color:var(--rose-deep);font-family:inherit;font-size:12px;font-weight:500;
+  cursor:pointer;padding:6px 15px;border-radius:20px;transition:.2s;
+}
+.daily .d-refresh:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+
+/* ---------- promises ---------- */
+.promises{padding:42px 0 60px}
+.promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.promise{
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:26px 24px;box-shadow:var(--shadow);
+}
+.promise .no{
+  font-family:var(--display);font-size:40px;font-weight:600;
+  color:var(--rose);line-height:1;margin-bottom:10px;
+}
+.promise h3{
+  font-family:var(--serif);font-weight:600;font-size:19px;
+  letter-spacing:.02em;margin-bottom:6px;
+}
+.promise p{font-size:13.5px;color:var(--ink2)}
+
+/* ---------- section ---------- */
+.section{padding:52px 0;border-top:1px solid var(--line2)}
+.section.tinted{background:var(--surface2)}
+.sec-head{margin-bottom:32px}
+.sec-num{
+  font-family:var(--display);font-size:15px;font-style:italic;
+  color:var(--rose);letter-spacing:.08em;display:block;margin-bottom:8px;
+}
+.sec-head h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(23px,5vw,30px);
+  letter-spacing:.02em;margin-bottom:10px;
+}
+.sec-head p{color:var(--ink2);font-size:14px;max-width:560px}
+
+/* ---------- rule cards ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:24px 24px 22px;margin-bottom:16px;box-shadow:var(--shadow);
+}
+.card-title{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--serif);font-weight:600;font-size:17px;
+  margin-bottom:14px;letter-spacing:.02em;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--rose);flex-shrink:0}
+.rules{list-style:none}
+.rules li{position:relative;padding-left:22px;margin-bottom:9px;font-size:14px;color:var(--ink)}
+.rules li:last-child{margin-bottom:0}
+.rules li::before{
+  content:"";position:absolute;left:4px;top:11px;
+  width:6px;height:6px;border:1.5px solid var(--rose);border-radius:50%;
+}
+.quote{
+  display:inline-block;background:var(--rose-soft);color:var(--rose-deep);
+  border-radius:6px;padding:1px 7px;font-weight:500;font-size:13.5px;
+}
+
+/* ---------- NG / OK ---------- */
+.vs-grid{display:grid;gap:14px}
+.vs{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  background:var(--surface);box-shadow:var(--shadow);
+}
+.vs-side{padding:18px}
+.vs-ng{background:var(--clay-soft)}
+.vs-ok{background:var(--sage-soft)}
+.vs-tag{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;
+  padding:2px 9px;border-radius:20px;margin-bottom:9px;color:#fff;
+}
+.vs-ng .vs-tag{background:var(--clay)}
+.vs-ok .vs-tag{background:var(--sage)}
+.vs-ng p{color:var(--clay-deep);font-size:14px}
+.vs-ok p{color:var(--sage-deep);font-size:14px}
+.vs-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:22px;color:var(--ink3);
+  padding:0 4px;background:var(--surface);
+}
+
+/* ---------- scene guide ---------- */
+.scene{
+  border:1px solid var(--line);border-radius:16px;background:var(--surface);
+  margin-bottom:13px;overflow:hidden;transition:border-color .25s,box-shadow .25s;box-shadow:var(--shadow);
+}
+.scene.open{border-color:var(--rose)}
+.scene-btn{
+  width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:14px;padding:19px 22px;font-family:inherit;color:inherit;
+}
+.scene-ico{
+  width:34px;height:34px;border-radius:10px;background:var(--rose-soft);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:var(--display);font-weight:600;font-size:18px;color:var(--rose-deep);
+}
+.scene-q{font-family:var(--serif);font-weight:600;font-size:16px;flex:1;letter-spacing:.01em}
+.scene-chev{color:var(--ink3);transition:transform .3s;flex-shrink:0;font-size:13px}
+.scene.open .scene-chev{transform:rotate(180deg)}
+.scene-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.flow{padding:4px 22px 24px}
+.step{position:relative;padding:0 0 18px 30px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:9px;top:4px;bottom:-4px;width:2px;background:var(--rose-soft)}
+.step:last-child::before{display:none}
+.step .pin{
+  position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;
+  background:var(--rose);color:#fff;font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.step p{font-size:14px;color:var(--ink)}
+.flow-note{
+  margin-top:6px;font-size:12.5px;color:var(--ink2);background:var(--tint);
+  border:1px dashed var(--rose-line);border-radius:10px;padding:9px 12px;
+}
+
+/* ---------- hate / answer ---------- */
+.pair{
+  display:grid;grid-template-columns:1fr 1fr;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  margin-bottom:13px;background:var(--surface);box-shadow:var(--shadow);
+}
+.pair .hate{background:var(--clay-soft);padding:18px}
+.pair .ans{padding:18px}
+.pair .lbl{font-size:10.5px;font-weight:700;letter-spacing:.12em;margin-bottom:8px;display:block}
+.pair .hate .lbl{color:var(--clay)}
+.pair .ans .lbl{color:var(--sage)}
+.pair .hate p{font-size:13.5px;color:var(--clay-deep)}
+.pair .ans p{font-size:13.5px;color:var(--ink)}
+
+/* ---------- checklist ---------- */
+.check-meta{font-size:12px;color:var(--ink3);margin-bottom:14px}
+.check-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.progress-wrap{flex:1;min-width:180px}
+.progress-bar{height:9px;background:var(--rose-soft);border-radius:9px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:var(--rose);border-radius:9px;transition:width .4s}
+.progress-txt{font-size:12px;color:var(--ink2);margin-top:7px;font-weight:500}
+.btn-reset{
+  background:none;border:1px solid var(--rose);color:var(--rose-deep);
+  font-family:inherit;font-size:12.5px;font-weight:500;cursor:pointer;
+  padding:8px 16px;border-radius:22px;transition:.2s;white-space:nowrap;
+}
+.btn-reset:hover{background:var(--rose);color:#fff}
+.checklist{list-style:none}
+.check-item{margin-bottom:9px}
+.check-item label{
+  display:flex;align-items:flex-start;gap:13px;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:14px 16px;transition:.2s;
+}
+.check-item label:hover{border-color:var(--rose-line)}
+.check-item input{position:absolute;opacity:0;width:0;height:0}
+.box{
+  width:22px;height:22px;border:2px solid var(--rose);border-radius:7px;flex-shrink:0;
+  margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.2s;
+}
+.box svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.2s}
+.check-item input:checked + .box{background:var(--rose);border-color:var(--rose)}
+.check-item input:checked + .box svg{opacity:1;transform:scale(1)}
+.check-txt{font-size:14px;line-height:1.65;transition:.2s}
+.check-item input:checked ~ .check-txt{color:var(--ink3);text-decoration:line-through}
+.check-item input:focus-visible + .box{outline:2px solid var(--rose);outline-offset:3px}
+.praise{
+  margin-top:16px;background:var(--sage-soft);border:1px solid #CFE0CC;border-radius:12px;
+  padding:14px 16px;color:var(--sage-deep);font-size:13.5px;font-weight:500;text-align:center;
+  display:none;
+}
+.praise.show{display:block}
+
+/* ---------- closing & footer ---------- */
+.closing{text-align:center;padding:60px 0 28px}
+.closing .mark{font-family:var(--display);font-style:italic;font-size:24px;color:var(--rose);margin-bottom:14px}
+.closing p{font-family:var(--serif);font-size:17px;color:var(--ink2);line-height:2}
+.foot{text-align:center;padding:22px 0 56px;color:var(--ink3);font-size:11.5px;letter-spacing:.04em}
+
+/* ---------- back to top ---------- */
+.totop{
+  position:fixed;right:18px;bottom:18px;z-index:40;
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--rose-line);
+  background:#fff;color:var(--rose);cursor:pointer;box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+  opacity:0;transform:translateY(10px);pointer-events:none;transition:.3s;
+}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--rose);color:#fff}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:620px){
+  .promise-grid{grid-template-columns:1fr}
+  .vs{grid-template-columns:1fr}
+  .vs-arrow{padding:6px 0;transform:rotate(90deg);font-size:18px}
+  .pair{grid-template-columns:1fr}
+  .pair .ans{border-top:1px solid var(--line)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="セクション">
+  <div class="nav-inner">
+    <span class="nav-mark">niko.</span>
+    <a href="#home">約束</a>
+    <a href="#renraku">連絡・共有</a>
+    <a href="#kimochi">気持ち</a>
+    <a href="#kotoba">言葉と特別感</a>
+    <a href="#scene">シーン別</a>
+    <a href="#iyada">嫌なこと表</a>
+    <a href="#check">チェック</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <p class="eyebrow">yuta &mdash; for niko</p>
+    <h1>にこと向き合う<br>ための約束</h1>
+    <p class="lead">うまく伝えるためのルールと、にこが嫌だと感じることを、迷った時すぐ開ける場所に。正しさより先に、にこがどう感じたか。</p>
+
+    <div class="daily" aria-live="polite">
+      <p class="d-eyebrow">今日のリマインド</p>
+      <p class="d-text" id="dailyText">&nbsp;</p>
+      <button class="d-refresh" id="dailyRefresh" type="button">別のを引く</button>
+    </div>
+  </div>
+</header>
+
+<section class="promises">
+  <div class="wrap">
+    <div class="promise-grid">
+      <div class="promise reveal"><div class="no">01</div><h3>理解を先、説明は後</h3><p>気持ちを受け取ってから、短く伝える。正しさは後回し。</p></div>
+      <div class="promise reveal"><div class="no">02</div><h3>共有は先、後出しは減らす</h3><p>聞かれてからではなく、自分から先に。不安になりそうなことほど早く。</p></div>
+      <div class="promise reveal"><div class="no">03</div><h3>特別感は言葉でも</h3><p>察してもらう前提にしない。「にこだけ」を、言葉にして渡す。</p></div>
+      <div class="promise reveal"><div class="no">04</div><h3>不安は小さく出す</h3><p>ため込んで爆発させない。モヤッとを、その場で軽く置く。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 連絡・共有 -->
+<section class="section" id="renraku">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">&#8544;</span>
+      <h2>連絡・共有のルール</h2>
+      <p>放置に見える時間を減らす。予定も気持ちも、後からではなく先に渡す。</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>連絡の基本</div>
+      <ul class="rules">
+        <li>返信できない時は既読で終わらせず、<span class="quote">今忙しい</span><span class="quote">〇時ごろ返す</span>を送る</li>
+        <li>仕事・会食・飲み・外出の予定は、始まる前に伝える</li>
+        <li>外出時は「誰と」「どこで」「何の用事か」を共有</li>
+        <li>長引く時は<span class="quote">まだ終わらなそう</span><span class="quote">帰り〇時くらい</span>を追加</li>
+        <li>帰宅したら<span class="quote">帰ったよ</span>を送る</li>
+        <li>気分が落ちている時は、理由まで言えなくても一言だけでも伝える</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>異性が関わる予定の共有</div>
+      <ul class="rules">
+        <li>後からではなく、先に伝える</li>
+        <li>1対1の食事はいかない</li>
+        <li>打ち合わせ・移動がある時も事前に伝える</li>
+        <li>「仕事だから言わなくていい」にはしない</li>
+        <li>不安になりそうな内容ほど、短くても先に言う</li>
+        <li>聞かれてからではなく、自分から言う</li>
+        <li>共有は<span class="quote">やましいことはないけど、先に言っておくね</span>の形で</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>忙しい時のルール</div>
+      <ul class="rules">
+        <li>返信が遅くなる日は、先に<span class="quote">今日は忙しい</span>と伝える</li>
+        <li>会議中・移動中・会食中は、終わった後にひとこと返す</li>
+        <li>返せない時でも、スタンプだけで終わらせない</li>
+        <li>放置に見える時間を、できるだけ減らす</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>干渉のルール</div>
+      <ul class="rules">
+        <li>干渉は監視ではなく、安心のための共有として行う</li>
+        <li>予定を聞かれたら、面倒くさがらずに答える</li>
+        <li>共有された内容を、責める材料にしない</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 気持ちの扱い方 -->
+<section class="section tinted" id="kimochi">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">&#8545;</span>
+      <h2>気持ちの扱い方</h2>
+      <p>何か言われた時、最初に反論しない。受け止め → 共感 → そのあと短く説明。</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>気持ちの受け止め方</div>
+      <ul class="rules">
+        <li>最初に反論せず<span class="quote">そう感じたんだね</span>と返す</li>
+        <li>改善策の前に<span class="quote">嫌だったよね</span><span class="quote">しんどかったよね</span>を入れる</li>
+        <li>「そんなつもりじゃなかった」は最初に言わない</li>
+        <li>説明は、気持ちを受け止めた後に短く</li>
+        <li>正しさより先に、にこがどう感じたかを扱う</li>
+      </ul>
+    </div>
+    <p style="font-size:13px;color:var(--ink2);margin:6px 0 12px" class="reveal">&mdash; やりがちな言い方を、こう変える</p>
+    <div class="vs-grid">
+      <div class="vs reveal">
+        <div class="vs-side vs-ng"><span class="vs-tag">NG</span><p>「そんなつもりじゃなかった」から入る</p></div>
+        <div class="vs-arrow">&rarr;</div>
+        <div class="vs-side vs-ok"><span class="vs-tag">OK</span><p>「そう感じたんだね。嫌だったよね」で受け止める</p></div>
+      </div>
+      <div class="vs reveal">
+        <div class="vs-side vs-ng"><span class="vs-tag">NG</span><p>いきなり改善策や正論を返す</p></div>
+        <div class="vs-arrow">&rarr;</div>
+        <div class="vs-side vs-ok"><span class="vs-tag">OK</span><p>まず共感。説明は受け止めた後に短く</p></div>
+      </div>
+      <div class="vs reveal">
+        <div class="vs-side vs-ng"><span class="vs-tag">NG</span><p>「考えすぎだよ」「誤解だよ」で終わらせる</p></div>
+        <div class="vs-arrow">&rarr;</div>
+        <div class="vs-side vs-ok"><span class="vs-tag">OK</span><p>"そう見えた"事実を認める</p></div>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-top:16px">
+      <div class="card-title"><span class="dot"></span>喧嘩の進め方</div>
+      <ul class="rules">
+        <li>感情が強い時は、その場で勝ち負けを決めない</li>
+        <li>まず<span class="quote">何が嫌だったか</span>だけを確認する</li>
+        <li>次に<span class="quote">どう見えたか</span>を確認する</li>
+        <li>最後に<span class="quote">次からどうするか</span>を決める</li>
+        <li>話が広がりすぎたら、論点を1つに絞る</li>
+        <li>無理にその場で終わらせず<span class="quote">少し落ち着いてから続き話そう</span>でもよい</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>不満の伝え方（自分から伝えるとき）</div>
+      <ul class="rules">
+        <li>後からまとめて爆発させず、その場で軽く触れる</li>
+        <li>「なんか嫌」で終わらせず、「何が嫌か」を一言足す</li>
+        <li>「あなたはこういう人」と決めつけない</li>
+        <li><span class="quote">こうされると嫌だった</span><span class="quote">こう見えてしんどかった</span>と言う</li>
+        <li>責めるより、共有する形で伝える</li>
+        <li>言いにくい時は<span class="quote">今ちょっとモヤった</span>と先に置く</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 言葉と特別感 -->
+<section class="section" id="kotoba">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">&#8546;</span>
+      <h2>言葉と特別感</h2>
+      <p>強すぎる言葉は使わない。優しさも特別感も、察してもらう前提にせず言語化する。</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>言葉のルール</div>
+      <ul class="rules">
+        <li>「しね」「きもい」「嫌い」など、強すぎる言葉は使わない</li>
+        <li>嫌味で伝えず<span class="quote">私はこう感じた</span>で言う</li>
+        <li>冗談に本音を混ぜた時は、あとで<span class="quote">今のはここが本音</span>と補足</li>
+        <li>ノリの場と真面目な場を、できるだけ分ける</li>
+        <li>真面目な話の時は、にこが真に受ける前提で話す</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>特別感の伝え方</div>
+      <ul class="rules">
+        <li><span class="quote">にこだけ特別</span>を、言葉で定期的に伝える</li>
+        <li>仕事の人と、恋人としての距離感は別々にする</li>
+        <li><span class="quote">こういう話をするのはにこだけ</span>と具体的に伝える</li>
+        <li>特別扱いは、察してもらう前提ではなく、自分で言葉にする</li>
+        <li>普段の優しさも<span class="quote">これはにこだからしてる</span>と言語化</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="card-title"><span class="dot"></span>安心の作り方</div>
+      <ul class="rules">
+        <li>何も問題がない時にも<span class="quote">好き</span><span class="quote">大事</span><span class="quote">嬉しい</span>を言う</li>
+        <li>不安が出た時だけ優しくするのではなく、普段から安心を置く</li>
+        <li>にこが安心する行動を、具体的に把握しておく</li>
+        <li>「何を共有したら安心するか」を事前に決めておく</li>
+        <li>不安が出た時は、まず確認してから想像を広げる</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- シーン別ガイド -->
+<section class="section tinted" id="scene">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">&#8547;</span>
+      <h2>シーン別クイックガイド</h2>
+      <p>迷ったらここ。場面をタップすると、やることの流れが順番に出る。</p>
+    </div>
+    <div class="scene reveal">
+      <button class="scene-btn" aria-expanded="false"><span class="scene-ico">A</span><span class="scene-q">返信できない・忙しい時</span><span class="scene-chev">&#9660;</span></button>
+      <div class="scene-body"><div class="flow">
+        <div class="step"><span class="pin">1</span><p>始まる前に「今日は忙しい」「〇時ごろ返す」と先に伝える</p></div>
+        <div class="step"><span class="pin">2</span><p>会議・移動・会食中でも、終わったらひとこと返す</p></div>
+        <div class="step"><span class="pin">3</span><p>返せない時も、スタンプや既読だけで終わらせない</p></div>
+        <div class="step"><span class="pin">4</span><p>帰宅したら「帰ったよ」を送る</p></div>
+      </div></div>
+    </div>
+    <div class="scene reveal">
+      <button class="scene-btn" aria-expanded="false"><span class="scene-ico">B</span><span class="scene-q">異性が関わる予定がある時</span><span class="scene-chev">&#9660;</span></button>
+      <div class="scene-body"><div class="flow">
+        <div class="step"><span class="pin">1</span><p>後からではなく、先に・自分から伝える</p></div>
+        <div class="step"><span class="pin">2</span><p>「誰と」「どこで」「何の用事か」を共有する</p></div>
+        <div class="step"><span class="pin">3</span><p>「やましいことはないけど、先に言っておくね」の形で</p></div>
+        <div class="step"><span class="pin">4</span><p>1対1の食事には行かない</p></div>
+        <div class="flow-note">不安になりそうな内容ほど、短くても先に言う。</div>
+      </div></div>
+    </div>
+    <div class="scene reveal">
+      <button class="scene-btn" aria-expanded="false"><span class="scene-ico">C</span><span class="scene-q">にこが何か言ってきた時</span><span class="scene-chev">&#9660;</span></button>
+      <div class="scene-body"><div class="flow">
+        <div class="step"><span class="pin">1</span><p>まず「そう感じたんだね」と受け止める</p></div>
+        <div class="step"><span class="pin">2</span><p>「嫌だったよね」「しんどかったよね」と共感する</p></div>
+        <div class="step"><span class="pin">3</span><p>「そんなつもりじゃなかった」は最初に言わない</p></div>
+        <div class="step"><span class="pin">4</span><p>受け止めた後に、説明を短く伝える</p></div>
+        <div class="flow-note">正しさより先に、にこがどう感じたかを扱う。</div>
+      </div></div>
+    </div>
+    <div class="scene reveal">
+      <button class="scene-btn" aria-expanded="false"><span class="scene-ico">D</span><span class="scene-q">喧嘩になった時</span><span class="scene-chev">&#9660;</span></button>
+      <div class="scene-body"><div class="flow">
+        <div class="step"><span class="pin">1</span><p>その場で勝ち負けを決めない</p></div>
+        <div class="step"><span class="pin">2</span><p>「何が嫌だったか」を確認する</p></div>
+        <div class="step"><span class="pin">3</span><p>「どう見えたか」を確認する</p></div>
+        <div class="step"><span class="pin">4</span><p>「次からどうするか」を決める</p></div>
+        <div class="flow-note">話が広がりすぎたら論点を1つに。無理に終わらせず「落ち着いてから続き話そう」でもよい。</div>
+      </div></div>
+    </div>
+    <div class="scene reveal">
+      <button class="scene-btn" aria-expanded="false"><span class="scene-ico">E</span><span class="scene-q">自分が不満を感じた時</span><span class="scene-chev">&#9660;</span></button>
+      <div class="scene-body"><div class="flow">
+        <div class="step"><span class="pin">1</span><p>後でまとめず、その場で軽く触れる</p></div>
+        <div class="step"><span class="pin">2</span><p>「なんか嫌」で終わらせず、「何が嫌か」を一言足す</p></div>
+        <div class="step"><span class="pin">3</span><p>言いにくければ「今ちょっとモヤった」と先に置く</p></div>
+        <div class="step"><span class="pin">4</span><p>決めつけず「こうされると嫌だった」と共有の形で</p></div>
+      </div></div>
+    </div>
+    <div class="scene reveal">
+      <button class="scene-btn" aria-expanded="false"><span class="scene-ico">F</span><span class="scene-q">特別感・安心を伝えたい時（普段から）</span><span class="scene-chev">&#9660;</span></button>
+      <div class="scene-body"><div class="flow">
+        <div class="step"><span class="pin">1</span><p>問題がない時にも「好き」「大事」「嬉しい」を言う</p></div>
+        <div class="step"><span class="pin">2</span><p>「こういう話をするのはにこだけ」と具体的に伝える</p></div>
+        <div class="step"><span class="pin">3</span><p>優しさを「これはにこだからしてる」と言語化する</p></div>
+        <div class="flow-note">不安が出た時だけでなく、普段から安心を置いておく。</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 嫌なこと対応表 -->
+<section class="section" id="iyada">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">&#8548;</span>
+      <h2>にこの嫌なこと → 対応</h2>
+      <p>左が「嫌だと感じること」、右が「どう動けば防げるか」。セットで見る。</p>
+    </div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 01</span><p>気持ちを先に受け取ってもらえない。すぐ説明や改善策に入られる。</p></div><div class="ans"><span class="lbl">対応</span><p>まず「そう感じたんだね」。改善策の前に共感を入れる。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 02</span><p>違和感を否定される。「考えすぎ」「誤解だよ」で終わる。</p></div><div class="ans"><span class="lbl">対応</span><p>否定から入らない。"そう見えた"という事実を認める。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 03</span><p>嘘・隠し事・後出し感。聞かれたから言う、の形。</p></div><div class="ans"><span class="lbl">対応</span><p>共有は先に、自分から。言葉と行動の整合を保つ。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 04</span><p>反応が遅い・無反応。今どういう状態か分からない。</p></div><div class="ans"><span class="lbl">対応</span><p>忙しくても一言。「今日は忙しい」を先に置く。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 05</span><p>特別感が見えない。他の女性と同じ枠に見える。</p></div><div class="ans"><span class="lbl">対応</span><p>「にこだけ」を言葉で定期的に。具体的に伝える。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 06</span><p>異性との関わりが見えない。1対1っぽく見える状況。</p></div><div class="ans"><span class="lbl">対応</span><p>異性の予定は内容まで先に共有。1対1の食事は行かない。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 07</span><p>後から不満を出される。我慢してまとめて出される。</p></div><div class="ans"><span class="lbl">対応</span><p>不満はその場で軽く。ため込んで後出ししない。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 08</span><p>ノリの場で正論を出される。冷たく感じるツッコミ。</p></div><div class="ans"><span class="lbl">対応</span><p>ノリと真面目を分ける。遊びの場で正しさを出しすぎない。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 09</span><p>強く言った時に、言葉尻・表面だけ拾われる。</p></div><div class="ans"><span class="lbl">対応</span><p>言葉尻でなく、本音と不安の核を拾う。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 10</span><p>人格を理解してもらえない。「普通は」で測られる。</p></div><div class="ans"><span class="lbl">対応</span><p>「普通は」で測らない。背景込みで見て、わかろうとする。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 11</span><p>気持ちを試す余地がない。反応が薄く、感情が見えない。</p></div><div class="ans"><span class="lbl">対応</span><p>感情を見せる。「好き」「安心」を言葉にして渡す。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 12</span><p>言い方が雑なまま放置。沈黙や不機嫌のフォローがない。</p></div><div class="ans"><span class="lbl">対応</span><p>空気の変化に触れる。沈黙やすれ違いをそのままにしない。</p></div></div>
+    <div class="pair reveal"><div class="hate"><span class="lbl">嫌なこと 13</span><p>「にこはこういう人」と決めつけられる。面倒扱いされる。</p></div><div class="ans"><span class="lbl">対応</span><p>決めつけない。事情や背景込みで、感じ方ごと受け止める。</p></div></div>
+  </div>
+</section>
+
+<!-- チェックリスト -->
+<section class="section tinted" id="check">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">&#8549;</span>
+      <h2>今日のチェックリスト</h2>
+      <p>できたぶんにチェック。状態はこの端末に保存され、日付が変わると自動でリセットされる。</p>
+    </div>
+    <div class="card reveal">
+      <div class="check-meta" id="checkMeta">&nbsp;</div>
+      <div class="check-head">
+        <div class="progress-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="pfill"></div></div>
+          <div class="progress-txt" id="ptxt">0 / 10 できた</div>
+        </div>
+        <button class="btn-reset" id="reset" type="button">今日のぶんをリセット</button>
+      </div>
+      <ul class="checklist" id="checklist"></ul>
+      <div class="praise" id="praise">今日のぶん、ぜんぶできた。&#10084;</div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap reveal">
+    <div class="mark">&#10084;</div>
+    <p>理解を先に、共有は先に。<br>特別感は、言葉でも渡す。</p>
+  </div>
+</section>
+
+<footer class="foot">yuta &amp; niko &mdash; private</footer>
+
+<button class="totop" id="totop" type="button" aria-label="トップへ戻る">&#8593;</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- scroll reveal ---- */
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    },{threshold:.12, rootMargin:"0px 0px -40px 0px"});
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  }else{
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---- nav scrollspy ---- */
+  var navLinks = {};
+  document.querySelectorAll('.nav a').forEach(function(a){
+    navLinks[a.getAttribute("href").slice(1)] = a;
+  });
+  if("IntersectionObserver" in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          for(var k in navLinks){ navLinks[k].classList.remove("active"); }
+          var link = navLinks[e.target.id];
+          if(link) link.classList.add("active");
+        }
+      });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    document.querySelectorAll("header[id],section[id]").forEach(function(s){ spy.observe(s); });
+  }
+
+  /* ---- daily reminder ---- */
+  var REMINDERS = [
+    "正しさより先に、にこがどう感じたか。",
+    "聞かれてからではなく、自分から先に。",
+    "まず「そう感じたんだね」から。",
+    "改善策の前に、まず共感。",
+    "問題がない時こそ「好き」「大事」「嬉しい」。",
+    "「にこだけ」を、言葉にして渡す。",
+    "不安は、ため込む前に小さく出す。",
+    "忙しくても、ひとこと。",
+    "異性の予定は、後からではなく先に。",
+    "強すぎる言葉は使わない。「私はこう感じた」で。",
+    "ノリと真面目を、分ける。",
+    "沈黙やすれ違いを、そのままにしない。"
+  ];
+  var dailyText = document.getElementById("dailyText");
+  function dayIndex(){
+    var n = new Date();
+    var start = new Date(n.getFullYear(),0,0);
+    var diff = (n - start) + ((start.getTimezoneOffset() - n.getTimezoneOffset())*60000);
+    return Math.floor(diff/86400000);
+  }
+  var cursor = dayIndex() % REMINDERS.length;
+  function showReminder(){ dailyText.textContent = REMINDERS[cursor]; }
+  showReminder();
+  document.getElementById("dailyRefresh").addEventListener("click", function(){
+    cursor = (cursor + 1) % REMINDERS.length;
+    showReminder();
+  });
+
+  /* ---- scene accordion ---- */
+  document.querySelectorAll(".scene-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var scene = btn.closest(".scene");
+      var body = scene.querySelector(".scene-body");
+      var open = scene.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      body.style.maxHeight = open ? (body.scrollHeight + "px") : "0px";
+    });
+  });
+
+  /* ---- checklist + localStorage (daily auto-reset) ---- */
+  var ITEMS = [
+    "予定が入った時、始まる前に伝えた",
+    "異性が関わる予定を、先に・自分から共有した",
+    "忙しくてもひとこと返した／帰宅連絡をした",
+    "何か言われた時、まず「そう感じたんだね」と受け止めた",
+    "改善策より先に、共感を伝えた",
+    "強すぎる言葉を使わなかった",
+    "「にこだけ特別」を言葉で伝えた",
+    "問題がない時にも「好き・大事・嬉しい」を伝えた",
+    "不満は後出しせず、その場で軽く伝えた",
+    "沈黙や空気の変化を、放置せずフォローした"
+  ];
+  var KEY = "niko-check-v2";
+  var listEl = document.getElementById("checklist");
+  var fillEl = document.getElementById("pfill");
+  var txtEl  = document.getElementById("ptxt");
+  var metaEl = document.getElementById("checkMeta");
+  var praiseEl = document.getElementById("praise");
+
+  function todayStr(){
+    var d = new Date();
+    return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+  }
+  function load(){
+    try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; }
+  }
+  function save(s){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
+
+  var store = load();
+  if(store.date !== todayStr()){ store = {date:todayStr(), checks:{}}; save(store); }
+  if(!store.checks) store.checks = {};
+
+  var checkSVG = '<svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  ITEMS.forEach(function(text,i){
+    var li = document.createElement("li");
+    li.className = "check-item";
+    var id = "ck"+i;
+    var checked = store.checks[i] ? " checked" : "";
+    li.innerHTML =
+      '<label for="'+id+'"><input type="checkbox" id="'+id+'" data-i="'+i+'"'+checked+'>' +
+      '<span class="box">'+checkSVG+'</span><span class="check-txt">'+text+'</span></label>';
+    listEl.appendChild(li);
+  });
+
+  function update(){
+    var done=0; for(var k in store.checks){ if(store.checks[k]) done++; }
+    var pct = Math.round(done/ITEMS.length*100);
+    fillEl.style.width = pct+"%";
+    txtEl.textContent = done+" / "+ITEMS.length+" できた";
+    metaEl.textContent = "最終チェック: "+store.date;
+    praiseEl.classList.toggle("show", done===ITEMS.length);
+  }
+  listEl.addEventListener("change", function(e){
+    if(e.target && e.target.matches('input[type="checkbox"]')){
+      store.checks[e.target.getAttribute("data-i")] = e.target.checked;
+      save(store); update();
+    }
+  });
+  document.getElementById("reset").addEventListener("click", function(){
+    store = {date:todayStr(), checks:{}}; save(store);
+    listEl.querySelectorAll('input[type="checkbox"]').forEach(function(c){ c.checked=false; });
+    update();
+  });
+  update();
+
+  /* ---- back to top ---- */
+  var toTop = document.getElementById("totop");
+  window.addEventListener("scroll", function(){
+    toTop.classList.toggle("show", window.scrollY > 600);
+  }, {passive:true});
+  toTop.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+})();
+</script>
+</body>
+</html>
