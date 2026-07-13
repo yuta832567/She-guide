@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="にことの関係のために、自分を変えるための改善リスト。10の課題と、その対策。">
 <meta name="theme-color" content="#2F6E68">
-<title>自分を変えるための10のこと</title>
+<title>にことの約束 — 改善リスト & 絶対ルール</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
   --shadow:0 1px 2px rgba(30,36,34,.04),0 6px 20px rgba(30,36,34,.05);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
 body{
   font-family:var(--sans);background:var(--bg);color:var(--ink);
   line-height:1.85;font-size:15px;overflow-x:hidden;
@@ -48,7 +48,7 @@ body{
 :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:56px;z-index:45;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:3px;padding:9px 16px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .nav-inner::-webkit-scrollbar{display:none}
 .nav-mark{font-family:var(--display);font-size:20px;font-style:italic;font-weight:600;color:var(--teal);margin-right:12px;white-space:nowrap;flex-shrink:0}
@@ -193,7 +193,7 @@ tbody tr:hover{background:var(--surface2)}
   .num-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
-  html{scroll-padding-top:62px}
+  html{scroll-padding-top:116px}
   .wrap{padding:0 18px}
   .section{padding:42px 0}
   .hero{padding:52px 0 26px}
@@ -211,10 +211,89 @@ tbody tr:hover{background:var(--surface2)}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* ===== タブ ===== */
+.tabs{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.tabs-in{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:6px;padding:8px 16px}
+.tabs-mark{font-family:var(--display);font-size:20px;font-style:italic;font-weight:600;color:var(--ink3);margin-right:8px;white-space:nowrap;flex-shrink:0}
+.tab{flex:1;background:none;border:1px solid var(--line);color:var(--ink2);font-family:inherit;font-size:13px;font-weight:600;padding:10px 12px;border-radius:22px;cursor:pointer;transition:.2s;white-space:nowrap;line-height:1.3}
+.tab:hover{border-color:var(--teal-line)}
+.tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.tab[data-t="abs"][aria-selected="true"]{background:var(--rule);border-color:var(--rule)}
+.tab small{display:block;font-size:10px;font-weight:500;opacity:.75;letter-spacing:.02em}
+.panel[hidden]{display:none}
+
+/* ===== 絶対ルール（タブ2） ===== */
+:root{--rule:#A93B4B;--rule-deep:#7C2536;--rule-soft:#FAE6EA;--rule-line:#EAC7CF}
+.abs .nav-mark,.abs .eyebrow,.abs .sec-num,.abs .d-eyebrow{color:var(--rule)}
+.abs .nav a.active,.abs .nav a:hover{background:var(--rule-soft);color:var(--rule-deep)}
+.abs .daily{background:var(--rule-soft);border-color:var(--rule-line)}
+.abs .d-refresh{border-color:var(--rule-line);color:var(--rule-deep)}
+.abs .d-refresh:hover{background:var(--rule);color:#fff;border-color:var(--rule)}
+.abs .closing .mark{color:var(--rule)}
+
+.oath{max-width:640px;margin:30px auto 0;background:var(--surface);border:1px solid var(--rule-line);border-left:4px solid var(--rule);border-radius:0 14px 14px 0;padding:18px 22px;text-align:left;box-shadow:var(--shadow)}
+.oath p{font-family:var(--serif);font-size:15px;color:var(--ink);line-height:1.9}
+.oath .oath-lb{font-size:10.5px;font-weight:700;letter-spacing:.14em;color:var(--rule);margin-bottom:6px}
+
+.rule{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--rule);border-radius:0 16px 16px 0;padding:24px 24px 22px;margin-bottom:14px;box-shadow:var(--shadow)}
+.rule-hd{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+.rule-no{width:38px;height:38px;border-radius:11px;background:var(--rule);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--display);font-weight:600;font-size:19px}
+.rule-hd h3{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.02em;line-height:1.5;padding-top:3px}
+.rule-what{list-style:none;margin-bottom:16px}
+.rule-what li{position:relative;padding-left:20px;margin-bottom:6px;font-size:14.5px;color:var(--ink);font-weight:500;line-height:1.75}
+.rule-what li:last-child{margin-bottom:0}
+.rule-what li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;background:var(--rule);border-radius:50%}
+
+/* タイムライン */
+.tl{position:relative;padding-left:8px}
+.tl-row{position:relative;display:grid;grid-template-columns:88px 1fr;gap:16px;padding-bottom:22px}
+.tl-row:last-child{padding-bottom:0}
+.tl-row::before{content:"";position:absolute;left:103px;top:26px;bottom:-4px;width:2px;background:var(--rule-line)}
+.tl-row:last-child::before{display:none}
+.tl-when{text-align:right;font-family:var(--display);font-weight:600;font-size:19px;color:var(--rule);line-height:1.3;padding-top:2px}
+.tl-when small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;color:var(--ink3);letter-spacing:.04em}
+.tl-body{position:relative;padding-left:22px}
+.tl-body::before{content:"";position:absolute;left:-4px;top:8px;width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid var(--rule);z-index:1}
+.tl-body h4{font-family:var(--serif);font-weight:600;font-size:15.5px;margin-bottom:3px}
+.tl-body p{font-size:13.5px;color:var(--ink2)}
+
+/* 判断フロー */
+.judge{background:var(--rule-soft);border:1px solid var(--rule-line);border-radius:16px;padding:26px 24px;text-align:center}
+.judge .q{font-family:var(--serif);font-weight:700;font-size:clamp(17px,3.6vw,21px);color:var(--rule-deep);line-height:1.65;margin-bottom:18px}
+.judge-arms{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px;margin:0 auto}
+.arm{background:#fff;border-radius:12px;padding:16px 14px}
+.arm .yn{font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:4px}
+.arm.y .yn{color:var(--rule)}
+.arm.n .yn{color:var(--green)}
+.arm p{font-size:13px;color:var(--ink);font-weight:500;line-height:1.6}
+.judge-foot{margin-top:16px;font-size:12.5px;color:var(--rule-deep)}
+
+@media(max-width:640px){
+  .tabs-in{padding:8px 12px;gap:5px}
+  .tabs-mark{display:none}
+  .tab{font-size:12px;padding:9px 8px}
+  .rule{padding:20px 18px}
+  .judge-arms{grid-template-columns:1fr}
+  .tl-row{grid-template-columns:66px 1fr;gap:10px}
+  .tl-row::before{left:75px}
+  .tl-when{font-size:16px}
+}
+
 </style>
 </head>
 <body>
 
+
+<div class="tabs">
+  <div class="tabs-in" role="tablist" aria-label="リストの切り替え">
+    <span class="tabs-mark">niko.</span>
+    <button class="tab" data-t="imp" role="tab" aria-selected="true" aria-controls="panel-imp" type="button">自分を変える10のこと<small>時間をかけて直す課題</small></button>
+    <button class="tab" data-t="abs" role="tab" aria-selected="false" aria-controls="panel-abs" type="button">絶対に守る6つ<small>破ってはいけない線</small></button>
+  </div>
+</div>
+
+<div class="panel" id="panel-imp" role="tabpanel">
 <nav class="nav" aria-label="セクション">
   <div class="nav-inner">
     <span class="nav-mark">change.</span>
@@ -696,6 +775,273 @@ tbody tr:hover{background:var(--surface2)}
 </section>
 
 <footer class="foot">yuta &mdash; private</footer>
+
+</div><!-- /panel-imp -->
+
+<div class="panel abs" id="panel-abs" role="tabpanel" hidden>
+
+<nav class="nav" aria-label="セクション">
+  <div class="nav-inner">
+    <span class="nav-mark">rules.</span>
+    <a href="#a-home">トップ</a>
+    <a href="#a-judge">判断の1問</a>
+    <a href="#a-rules">6つのルール</a>
+    <a href="#a-time">時間の約束</a>
+    <a href="#a-link">改善リストとの対応</a>
+  </div>
+</nav>
+
+<header class="hero" id="a-home">
+  <div class="wrap">
+    <p class="eyebrow">absolute &mdash; non-negotiable</p>
+    <h1>にこのために<br>絶対に守る6つ</h1>
+    <p class="lead">これは「だんだん直す課題」じゃない。守るか、破るか。その場で決まる6本の線。迷ったら、下の1問に答えるだけ。</p>
+    <div class="oath">
+      <p class="oath-lb">THE LINE</p>
+      <p>後出しにしない。ごまかさない。初手で否定しない。放置しない。軽く扱わない。強い言葉を使わない。</p>
+    </div>
+    <div class="daily" aria-live="polite" style="margin-top:22px">
+      <p class="d-eyebrow">今日、特に気をつける線</p>
+      <p class="d-text" id="absText">&nbsp;</p>
+      <button class="d-refresh" id="absRefresh" type="button">別のを引く</button>
+    </div>
+  </div>
+</header>
+
+<!-- 判断の1問 -->
+<section class="section" id="a-judge">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">One question</span>
+      <h2>迷ったら、この1問</h2>
+      <p>6つのルールは、突き詰めるとこの問いに集約される。予定・連絡・言い方、どれで迷ってもここに戻る。</p>
+    </div>
+    <div class="judge reveal">
+      <p class="q">「これ、にこが<u>後から</u>知ったら嫌かも」<br>と一瞬でも思った？</p>
+      <div class="judge-arms">
+        <div class="arm y">
+          <div class="yn">YES</div>
+          <p>今すぐ、自分から先に言う。<br>短くていい。聞かれる前に。</p>
+        </div>
+        <div class="arm n">
+          <div class="yn">NO</div>
+          <p>そのまま進んでいい。<br>迷ったなら、それは YES。</p>
+        </div>
+      </div>
+      <p class="judge-foot">迷った時点で「言ったほうがいい」側。判断に困ったら、共有する。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6つのルール -->
+<section class="section tinted" id="a-rules">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">The six</span>
+      <h2>6つのルール</h2>
+      <p>それぞれ「何を守るか → やりがちな例 → 守るための対策」。対策は行動レベルまで落としてある。</p>
+    </div>
+
+    <article class="rule reveal">
+      <div class="rule-hd"><span class="rule-no">1</span><h3>後出しにしない</h3></div>
+      <ul class="rule-what">
+        <li>にこが不安になりそうな予定や出来事を、後から伝えない</li>
+        <li>聞かれてから答える形にしない</li>
+        <li>異性・予定変更・過去に不安が出た内容は、先に共有する</li>
+      </ul>
+      <div class="duo">
+        <div class="duo-box duo-ng"><span class="blk-lbl l-ng">やりがちな例</span><ul>
+          <li>整体・美容室・飲み会・仕事で、異性が関わる可能性がある予定</li>
+          <li>帰宅時間や行動予定が変わったとき</li>
+          <li>前に一度でもにこが嫌がったことに関係する予定</li>
+        </ul></div>
+        <div class="duo-box duo-ok"><span class="blk-lbl l-ok">守るための対策</span><ul>
+          <li>「これ、にこが後から知ったら嫌かも」と思ったら先に言う</li>
+          <li>予定が<em>決まった時点</em>で共有する</li>
+          <li>予定が<span class="tick">30分</span>以上変わったら一言連絡する</li>
+        </ul></div>
+      </div>
+    </article>
+
+    <article class="rule reveal">
+      <div class="rule-hd"><span class="rule-no">2</span><h3>嘘・ごまかし・曖昧な説明をしない</h3></div>
+      <ul class="rule-what">
+        <li>自分を守るために、事実を少し変えて伝えない</li>
+        <li>記憶が曖昧なことを断言しない</li>
+        <li>後から話が変わるような言い方をしない</li>
+      </ul>
+      <div class="duo">
+        <div class="duo-box duo-ng"><span class="blk-lbl l-ng">やりがちな例</span><ul>
+          <li>まだ家にいるのに、外にいるように言う</li>
+          <li>本当は覚えていないのに、覚えている風に話す</li>
+          <li>怒られたくなくて、説明を省く</li>
+        </ul></div>
+        <div class="duo-box duo-ok"><span class="blk-lbl l-ok">守るための対策</span><ul>
+          <li>曖昧なときは「ごめん、正確には覚えてない」と言う</li>
+          <li>間違って伝えたと気づいたら<span class="tick">その日のうち</span>に訂正する</li>
+          <li>自分に不利なことでも、正直に言う</li>
+        </ul></div>
+      </div>
+    </article>
+
+    <article class="rule reveal">
+      <div class="rule-hd"><span class="rule-no">3</span><h3>初手で否定しない</h3></div>
+      <ul class="rule-what">
+        <li>にこが不安や嫌だったことを話したとき、最初に説明・反論・正論を出さない</li>
+        <li>まず気持ちを受け取る</li>
+      </ul>
+      <div class="duo">
+        <div class="duo-box duo-ng"><span class="blk-lbl l-ng">やりがちな例</span><ul>
+          <li>「そんなつもりじゃない」</li>
+          <li>「考えすぎ」</li>
+          <li>「普通は〜」</li>
+          <li>「誤解だよ」</li>
+        </ul></div>
+        <div class="duo-box duo-ok"><span class="blk-lbl l-ok">守るための対策</span><ul>
+          <li>最初の一言は「そう感じたんだね」にする</li>
+          <li>説明したいときも、先に「不安にさせたのはごめん」と言う</li>
+          <li>反論は、にこの気持ちを受け止めた<em>後</em>にする</li>
+        </ul></div>
+      </div>
+    </article>
+
+    <article class="rule reveal">
+      <div class="rule-hd"><span class="rule-no">4</span><h3>無反応・放置をしない</h3></div>
+      <ul class="rule-what">
+        <li>喧嘩中や不安にさせたときに、未読・既読放置・沈黙で終わらせない</li>
+        <li>すぐ解決できなくても、今の状態を伝える</li>
+      </ul>
+      <div class="duo">
+        <div class="duo-box duo-ng"><span class="blk-lbl l-ng">やりがちな例</span><ul>
+          <li>怒らせたあとに返信しない</li>
+          <li>考えているだけで、何も言わない</li>
+          <li>忙しいからといって、何も共有しない</li>
+        </ul></div>
+        <div class="duo-box duo-ok"><span class="blk-lbl l-ok">守るための対策</span><ul>
+          <li>すぐ返せないときは「今すぐ返せないけど、あとでちゃんと話す」と送る</li>
+          <li>喧嘩後<span class="tick">6時間</span>以内に、一度は自分から連絡する</li>
+          <li>遅くても<span class="tick">翌日中</span>には話し合う</li>
+        </ul></div>
+      </div>
+    </article>
+
+    <article class="rule reveal">
+      <div class="rule-hd"><span class="rule-no">5</span><h3>にこを軽く扱っているように見せない</h3></div>
+      <ul class="rule-what">
+        <li>にこが「自分は特別じゃない」「大事にされていない」と感じる行動をしない</li>
+        <li>他の女性と同じ扱いに見える行動を避ける</li>
+      </ul>
+      <div class="duo">
+        <div class="duo-box duo-ng"><span class="blk-lbl l-ng">やりがちな例</span><ul>
+          <li>異性関係を「仕事だから」で済ませる</li>
+          <li>にこが不安がっていたことを忘れて、同じことをする</li>
+          <li>感謝や好きな気持ちを言葉にしない</li>
+        </ul></div>
+        <div class="duo-box duo-ok"><span class="blk-lbl l-ok">守るための対策</span><ul>
+          <li><span class="tick">1日1回</span>は「ありがとう」や好意を言葉にする</li>
+          <li>異性が関わる予定は、先に共有する</li>
+          <li>「にこが嫌がっていたこと」はメモして忘れない</li>
+        </ul></div>
+      </div>
+    </article>
+
+    <article class="rule reveal">
+      <div class="rule-hd"><span class="rule-no">6</span><h3>強い言葉・雑な言い方をしない</h3></div>
+      <ul class="rule-what">
+        <li>感情的になっても、突き放す言葉や雑な言い方をしない</li>
+        <li>にこが否定されたと感じる言葉を避ける</li>
+      </ul>
+      <div class="duo">
+        <div class="duo-box duo-ng"><span class="blk-lbl l-ng">やりがちな例</span><ul>
+          <li>「無理」</li><li>「ダメ」</li><li>「おまえ」</li><li>「もういい」</li><li>「意味ない」</li>
+        </ul></div>
+        <div class="duo-box duo-ok"><span class="blk-lbl l-ok">守るための対策</span><ul>
+          <li>イラッとしたら<span class="tick">10秒</span>黙る</li>
+          <li>「無理」ではなく「今のままだと少ししんどい」と言う</li>
+          <li>感情が強いときは「<span class="tick">10分</span>落ち着いてから話したい」と伝える</li>
+        </ul></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 時間の約束 -->
+<section class="section" id="a-time">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">Timeline</span>
+      <h2>まずい状況になった時の、時間の約束</h2>
+      <p>不安にさせた・怒らせた・喧嘩した。そこから何時間で、何をするか。時間が経つほど不信は大きくなる。</p>
+    </div>
+    <div class="card reveal">
+      <div class="tl">
+        <div class="tl-row">
+          <div class="tl-when">0<small>そのとき</small></div>
+          <div class="tl-body"><h4>初手で否定しない</h4><p>最初の一言は「そう感じたんだね」。説明はその後。</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-when">10<small>びょう</small></div>
+          <div class="tl-body"><h4>イラッとしたら黙る</h4><p>すぐ返さない。強い言葉が出そうな時ほど一拍おく。</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-when">10<small>ふん</small></div>
+          <div class="tl-body"><h4>落ち着く時間をもらう</h4><p>「10分落ち着いてから話したい」と伝える。黙って消えない。</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-when">すぐ<small>返せない時</small></div>
+          <div class="tl-body"><h4>状態だけでも伝える</h4><p>「今すぐ返せないけど、あとでちゃんと話す」と送る。放置しない。</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-when">6<small>じかん以内</small></div>
+          <div class="tl-body"><h4>自分から連絡する</h4><p>にこが謝るのを待たない。喧嘩後、一度は必ず自分から。</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-when">その日<small>のうち</small></div>
+          <div class="tl-body"><h4>間違いを訂正する</h4><p>誤って伝えたと気づいたら、日をまたがせない。</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-when">翌日<small>までに</small></div>
+          <div class="tl-body"><h4>話し合う</h4><p>先延ばしにしない。「もういい」で終わらせない。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 対応表 -->
+<section class="section tinted" id="a-link">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">Cross-reference</span>
+      <h2>改善リストとの対応</h2>
+      <p>6つの絶対ルールは、10の改善のうちどれと繋がっているか。「守れなかった」時に、どこを直せばいいかが分かる。</p>
+    </div>
+    <div class="tbl-scroll reveal">
+      <table>
+        <thead><tr><th>絶対ルール</th><th></th><th>根っこにある改善項目</th></tr></thead>
+        <tbody>
+          <tr><td class="td-ng">1. 後出しにしない</td><td class="td-arw">&rarr;</td><td class="td-ok">05 嘘をつかない ／ 10 日常の安心感を増やす</td></tr>
+          <tr><td class="td-ng">2. ごまかさない</td><td class="td-arw">&rarr;</td><td class="td-ok">04 過信しすぎない ／ 05 嘘をつかない</td></tr>
+          <tr><td class="td-ng">3. 初手で否定しない</td><td class="td-arw">&rarr;</td><td class="td-ok">07 気持ちを否定しない ／ 08 気持ちに寄り添う</td></tr>
+          <tr><td class="td-ng">4. 放置しない</td><td class="td-arw">&rarr;</td><td class="td-ok">09 喧嘩後の対応 ／ 01 感情をコントロールする</td></tr>
+          <tr><td class="td-ng">5. 軽く扱わない</td><td class="td-arw">&rarr;</td><td class="td-ok">10 日常の安心感 ／ 08 気持ちに寄り添う</td></tr>
+          <tr><td class="td-ng">6. 強い言葉を使わない</td><td class="td-arw">&rarr;</td><td class="td-ok">03 強い言葉を使わない ／ 02 プライドを見直す</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap reveal">
+    <div class="mark">&mdash;</div>
+    <p>迷ったら、先に言う。<br>それだけで、5つは守れる。</p>
+  </div>
+</section>
+
+<footer class="foot">yuta &mdash; private</footer>
+</div><!-- /panel-abs -->
+
 <button class="totop" id="totop" type="button" aria-label="トップへ戻る">&#8593;</button>
 
 <script>
@@ -713,14 +1059,16 @@ tbody tr:hover{background:var(--surface2)}
   }
 
   /* scrollspy */
-  var links = {};
-  document.querySelectorAll(".nav a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
   if("IntersectionObserver" in window){
     var spy = new IntersectionObserver(function(es){
       es.forEach(function(e){
-        if(e.isIntersecting){
-          for(var k in links){ links[k].classList.remove("active"); }
-          if(links[e.target.id]) links[e.target.id].classList.add("active");
+        if(e.isIntersecting && e.target.offsetParent !== null){
+          var panel = e.target.closest(".panel");
+          if(panel){
+            panel.querySelectorAll(".nav a").forEach(function(a){ a.classList.remove("active"); });
+            var lk = panel.querySelector('.nav a[href="#'+e.target.id+'"]');
+            if(lk) lk.classList.add("active");
+          }
         }
       });
     },{rootMargin:"-45% 0px -50% 0px"});
@@ -842,6 +1190,50 @@ tbody tr:hover{background:var(--surface2)}
     upd();
   });
   upd();
+
+
+  /* ---- tabs ---- */
+  var tabs = document.querySelectorAll(".tab");
+  var panels = { imp: document.getElementById("panel-imp"), abs: document.getElementById("panel-abs") };
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){
+      var k = t.getAttribute("data-t");
+      tabs.forEach(function(x){ x.setAttribute("aria-selected", x === t ? "true" : "false"); });
+      for(var p in panels){ panels[p].hidden = (p !== k); }
+      window.scrollTo({top:0, behavior:"auto"});
+      panels[k].querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+      try{ localStorage.setItem("niko-tab", k); }catch(e){}
+    });
+  });
+  try{
+    var saved = localStorage.getItem("niko-tab");
+    if(saved === "abs"){
+      document.querySelector('.tab[data-t="abs"]').click();
+    }
+  }catch(e){}
+
+  /* ---- 絶対ルール：今日の線 ---- */
+  var ABS = [
+    "迷ったら、先に言う。聞かれる前に。",
+    "曖昧なら「正確には覚えてない」と言う。",
+    "最初の一言は「そう感じたんだね」。",
+    "返せなくても「あとでちゃんと話す」と送る。",
+    "今日、「ありがとう」を1回。",
+    "イラッとしたら、10秒黙る。",
+    "予定が30分ズレたら、連絡する。",
+    "喧嘩したら、6時間以内に自分から。",
+    "「にこが嫌がっていたこと」を思い出す。",
+    "「無理」ではなく「今のままだと少ししんどい」。"
+  ];
+  var at = document.getElementById("absText");
+  if(at){
+    var acur = dayIdx() % ABS.length;
+    var showAbs = function(){ at.textContent = ABS[acur]; };
+    showAbs();
+    document.getElementById("absRefresh").addEventListener("click", function(){
+      acur = (acur + 1) % ABS.length; showAbs();
+    });
+  }
 
   /* to top */
   var tt=document.getElementById("totop");
